@@ -1,4 +1,5 @@
-using Pudgerios.Api.Services;
+using Pudgerios.Api.Interfaces;
+using Pudgerios.Api.Entities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Pudgerios.Api.Controllers
