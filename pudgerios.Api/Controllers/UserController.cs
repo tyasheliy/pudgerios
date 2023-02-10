@@ -9,22 +9,22 @@ namespace Pudgerios.Api.Controllers
 		public class UserController : ControllerBase
 		{
 			private IUserService _users;
-
+			
 			public UserController(IUserService users) => _users = users;
-
-			[HttpGet("/get/user/{id}")]
+			
+			[HttpGet("get/user/{id}")]
 			public async Task<IActionResult> GetUser(string id)
 			{
 				if (Guid.TryParse(id, out var guid))
 				{
 					var user = await _users.GetUser(guid);
-					if (user == null) return NotFound();
+					if (user == null) return BadRequest();
 					return Ok(user);
 				}
-				return NotFound();
+				return BadRequest();
 			}
 
-			[HttpGet("/get/id/{login}")]
+			[HttpGet("get/id/{login}")]
 			public async Task<IActionResult> GetUserId(string login)
 			{
 				var guid = await _users.GetUserId(login);
@@ -32,7 +32,7 @@ namespace Pudgerios.Api.Controllers
 				return Ok(guid);
 			}
 
-			[HttpPost("/register/{login}/{password}/{role}")]
+			[HttpPost("register/{login}/{password}/{role}")]
 			public async Task<IActionResult> RegisterUser(string login, string password, string role)
 			{
 				if (await _users.RegisterUser(login, password, role))
@@ -42,7 +42,7 @@ namespace Pudgerios.Api.Controllers
 				return BadRequest();
 			}
 
-			[HttpPost("/auth/{login}/{password}")]
+			[HttpPost("auth/{login}/{password}")]
 			public async Task<IActionResult> AuthUser(string login, string password)
 			{
 				if (await _users.AuthUser(login, password))
@@ -52,7 +52,7 @@ namespace Pudgerios.Api.Controllers
 				return BadRequest();
 			}
 
-			[HttpPost("/delete/{id}")]
+			[HttpPost("delete/{id}")]
 			public async Task<IActionResult> DeleteUser(string id)
 			{
 				if (Guid.TryParse(id, out var guid))
