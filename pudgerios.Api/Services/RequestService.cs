@@ -16,21 +16,27 @@ namespace Pudgerios.Api.Services
 					await _db.SaveChangesAsync();
 				}
 
-				public async Task AcceptRequest(Request request)
+				public async Task AcceptRequest(Guid id)
 				{
-					throw new NotImplementedException();
+					var request = await _db.Requests.FindAsync(id);
+					if (request is null) throw new NullReferenceException();
+					request.Status = "Accepted";
+					await _db.SaveChangesAsync();
 				}
 
-				public async Task DeclineRequest(Request request)
+				public async Task DeclineRequest(Guid id)
 				{
-						throw new NotImplementedException();
+					var request = await _db.Requests.FindAsync(id);
+					if (request is null) throw new NullReferenceException();
+					request.Status = "Declined";
+					await _db.SaveChangesAsync();
 				}
 
 				public async Task<Request> GetRequest(Guid id)
 				{
-						var request = await _db.Requests.FindAsync(id);
-						if (request == null) throw new NullReferenceException();
-						return request;
+					var request = await _db.Requests.FindAsync(id);
+					if (request == null) throw new NullReferenceException();
+					return request;
 				}
 
 				public void Dispose()

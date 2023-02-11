@@ -6,9 +6,9 @@ namespace Pudgerios.Api.Interfaces
 		{
 				Task CreateRequest(Request request);
 
-				Task AcceptRequest(Request request);
+				Task AcceptRequest(Guid id);
 
-				Task DeclineRequest(Request request);
+				Task DeclineRequest(Guid id);
 
 				Task<Request> GetRequest(Guid id);
 		}

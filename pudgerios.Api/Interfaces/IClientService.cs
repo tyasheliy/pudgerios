@@ -9,5 +9,7 @@ namespace Pudgerios.Api.Interfaces
 			Task<Client> GetClient(Guid id);
 
 			Task<string> GetFullName(Guid id);
+
+			Task DeleteClient(Guid id);
 		}
 }

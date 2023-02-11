@@ -17,9 +17,15 @@ namespace Pudgerios.Api.Controllers
 			{
 				if (Guid.TryParse(id, out var guid))
 				{
-					var user = await _users.GetUser(guid);
-					if (user == null) return BadRequest();
-					return Ok(user);
+					try
+					{
+						await _users.GetUser(guid);
+					}
+					catch
+					{
+						return BadRequest();
+					}
+					return Ok(await _users.GetUser(guid));
 				}
 				return BadRequest();
 			}
@@ -27,9 +33,15 @@ namespace Pudgerios.Api.Controllers
 			[HttpGet("get/id/{login}")]
 			public async Task<IActionResult> GetUserId(string login)
 			{
-				var guid = await _users.GetUserId(login);
-				if (guid == null) return NotFound();
-				return Ok(guid);
+				try
+				{
+					await _users.GetUserId(login);
+				}
+				catch
+				{
+					return BadRequest();
+				}
+				return Ok(await _users.GetUserId(login));
 			}
 
 			[HttpPost("register/{login}/{password}/{role}")]
@@ -52,7 +64,7 @@ namespace Pudgerios.Api.Controllers
 				return BadRequest();
 			}
 
-			[HttpPost("delete/{id}")]
+			[HttpDelete("{id}")]
 			public async Task<IActionResult> DeleteUser(string id)
 			{
 				if (Guid.TryParse(id, out var guid))
@@ -63,19 +75,19 @@ namespace Pudgerios.Api.Controllers
 					}
 					catch
 					{
-						return NotFound();
+						return BadRequest();
 					}
 					return Ok();
 				}
-				return NotFound();
+				return BadRequest();
 			}
 
-			[HttpPut("change")]
+			[HttpPut]
 			public async Task<IActionResult> ChangeUser([FromBody] User user)
 			{
 				try
 				{
-					await ChangeUser(user);
+					await _users.ChangeUser(user);
 				}
 				catch
 				{

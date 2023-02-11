@@ -20,27 +20,48 @@ namespace Pudgerios.Api.Services
 
 				public async Task<bool> AuthUser(string login, string password)
 				{
-						throw new NotImplementedException();
+						var user = await Task.FromResult(_db.Users.FirstOrDefault(x => x.Login == login & x.Password == password));
+						if (user == null) return false;
+						return true;
 				}
 
 				public async Task<bool> RegisterUser(string login, string password, string role)
 				{
-						throw new NotImplementedException();
+						var user = await Task.FromResult(_db.Users.FirstOrDefault(x => x.Login == login & x.Password == password));
+						if (user != null) return false;
+						var newuser = new User
+						{
+								Id = Guid.NewGuid(),
+								Login = login,
+								Password = password,
+								Role = role
+						};
+						_db.Users.Add(newuser);
+						await _db.SaveChangesAsync();
+						return true;
 				}
 
 				public async Task<User> GetUser(Guid id)
 				{
-						throw new NotImplementedException();
+						var user = await _db.Users.FindAsync(id);
+						if (user == null) throw new NullReferenceException();
+						return user;
 				}
 
 				public async Task<Guid> GetUserId(string login)
 				{
-						throw new NotImplementedException();
+						var user = await Task.FromResult(_db.Users.FirstOrDefault(x => x.Login == login));
+						if (user == null) return Guid.Empty;
+						return user.Id;
 				}
 
 				public async Task ChangeUser(User user)
 				{
-						throw new NotImplementedException();
+						var u = await _db.Users.FindAsync(user.Id);
+						if (u == null) throw new NullReferenceException();
+						u.Password = user.Password;
+						u.Role = user.Role;
+						await _db.SaveChangesAsync();
 				}
 
 				public void Dispose()

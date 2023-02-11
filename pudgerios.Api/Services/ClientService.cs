@@ -22,6 +22,14 @@ namespace Pudgerios.Api.Services
 					await _db.SaveChangesAsync();
 				}
 
+				public async Task DeleteClient(Guid id)
+				{
+					var client = await _db.Clients.FindAsync(id);
+					if (client is null) throw new NullReferenceException();
+					_db.Clients.Remove(client);
+					await _db.SaveChangesAsync();
+				}
+
 				public async Task<Client> GetClient(Guid id)
 				{
 						var client = await _db.Clients.FindAsync(id);

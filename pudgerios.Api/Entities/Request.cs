@@ -1,5 +1,3 @@
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Pudgerios.Api.Entities
@@ -12,8 +10,11 @@ namespace Pudgerios.Api.Entities
 				[Required]
 				public Room Room {get; set;}
 				[Required]
-				public DateTime Date {get; set;}
-				
+				public DateTime PublishDate {get; set;}
+				[Required]
+				public DateTime BeginData {get; set;}
+				[Required]
+				public DateTime EndDate {get; set;}
 				public string Status {get; set;}
 		}
 }
