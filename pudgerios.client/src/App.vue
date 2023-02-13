@@ -1,16 +1,13 @@
 <template>
-	<Navbar />
-	<div class = 'container'>
-		
-	</div>
+	<Index />
 </template>
 
 <script>
-	import Navbar from './components/Navbar.vue'
+	import Index from './views/Index.vue'
 
 	export default{
 		components: {
-			Navbar
+			Index
 		}
 	}
 </script>
@@ -19,6 +16,7 @@
 	@import './static/css/bootstrap.min.css';
 
 	body{
+		margin: 0;
 		font-family: 'Alice';
 		font-weight: 400;
 		font-style: normal;

@@ -1,5 +1,5 @@
 <template>
-	<nav :class="(transparent) ? 'navbar navbar-expand-lg navbar-dark bg-transparent' : 'navbar navbar-expand-lg navbar-dark bg-dark'">
+	<nav :class="(transparent) ? 'navbar navbar-expand-lg navbar-dark bg-transparent' : 'navbar navbar-expand-lg navbar-dark bg-dark dark'">
 		<div class = 'container'>
 			<a href = '#' class = 'navbar-brand'>Pudgerios Hotel</a>
 			<ul class='navbar-nav me-auto mx-3 mb-2 mb-lg-0'>
@@ -9,7 +9,6 @@
 				<li class = 'nav-item'><a href = '#' class = 'nav-link'>Питание и развлечение</a></li>
 				<li class = 'nav-item'><a href = '#' class = 'nav-link'>Контакты</a></li>
 			</ul>
-			<hr v-if="transparent" color = "white" size = "2px" width = "100%">
 		</div>
 	</nav>
 </template>
@@ -37,12 +36,6 @@ export default{
 
 	.dark {
 		position: sticky;
-		top: 0;
-		left: 0;
-	}
-
-	.transparent {
-		position: absolute;
 		top: 0;
 		left: 0;
 	}
