@@ -1,8 +1,8 @@
 <template>
 	<nav :class="(transparent) ? 'navbar navbar-expand-lg navbar-dark bg-transparent' : 'navbar navbar-expand-lg navbar-dark bg-dark dark'">
-		<div class = 'container'>
+		<div class = 'container-fluid d-flex'>
 			<a href = '#' class = 'navbar-brand'>Pudgerios Hotel</a>
-			<ul class='navbar-nav me-auto mx-3 mb-2 mb-lg-0'>
+			<ul class='navbar-nav me-auto'>
 				<li class='nav-item'><a href = '#' class = 'nav-link'>Об отеле</a></li>
 				<li class = 'nav-item'><a href = '#' class = 'nav-link'>События</a></li>
 				<li class = 'nav-item'><a href = '#' class = 'nav-link'>Номера</a></li>
@@ -35,8 +35,9 @@ export default{
 	}
 
 	.dark {
-		position: sticky;
+		position: sticky !important;
 		top: 0;
 		left: 0;
+		z-index: 2;
 	}
 </style>
