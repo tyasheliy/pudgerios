@@ -10,6 +10,6 @@ namespace Pudgerios.Api.Interfaces
 
 				Task AddClient(int id, Client client);
 
-				Task ClearClients(int id);
+				Task ClearClient(int id);
 		}
 }

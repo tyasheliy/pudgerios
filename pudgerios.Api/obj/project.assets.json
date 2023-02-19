@@ -1227,19 +1227,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/tyasheliy/.nuget/packages/": {}
+    "/home/tyasheliy/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/tyasheliy/Desktop/Pudgerios/pudgerios.Api/pudgerios.Api.csproj",
+      "projectUniqueName": "/home/tyasheliy/Desktop/pudgerios/pudgerios.Api/pudgerios.Api.csproj",
       "projectName": "pudgerios.Api",
-      "projectPath": "/Users/tyasheliy/Desktop/Pudgerios/pudgerios.Api/pudgerios.Api.csproj",
-      "packagesPath": "/Users/tyasheliy/.nuget/packages/",
-      "outputPath": "/Users/tyasheliy/Desktop/Pudgerios/pudgerios.Api/obj/",
+      "projectPath": "/home/tyasheliy/Desktop/pudgerios/pudgerios.Api/pudgerios.Api.csproj",
+      "packagesPath": "/home/tyasheliy/.nuget/packages/",
+      "outputPath": "/home/tyasheliy/Desktop/pudgerios/pudgerios.Api/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/tyasheliy/.nuget/NuGet/NuGet.Config"
+        "/home/tyasheliy/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -1296,7 +1296,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.113/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/6.0.113/RuntimeIdentifierGraph.json"
       }
     }
   }

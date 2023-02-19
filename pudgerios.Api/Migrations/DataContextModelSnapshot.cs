@@ -38,21 +38,11 @@ namespace pudgerios.Api.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid?>("RequestId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int?>("RoomId")
-                        .HasColumnType("INTEGER");
-
                     b.Property<string>("SecondName")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("RequestId");
-
-                    b.HasIndex("RoomId");
 
                     b.ToTable("Clients");
                 });
@@ -64,6 +54,9 @@ namespace pudgerios.Api.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("BeginData")
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid>("ClientId")
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("EndDate")
@@ -79,7 +72,12 @@ namespace pudgerios.Api.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("Suits")
+                        .HasColumnType("INTEGER");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("ClientId");
 
                     b.HasIndex("RoomId");
 
@@ -92,6 +90,9 @@ namespace pudgerios.Api.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<Guid?>("ClientId")
+                        .HasColumnType("TEXT");
+
                     b.Property<int>("Seats")
                         .HasColumnType("INTEGER");
 
@@ -100,6 +101,8 @@ namespace pudgerios.Api.Migrations
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ClientId");
 
                     b.ToTable("Rooms");
                 });
@@ -127,36 +130,32 @@ namespace pudgerios.Api.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("Pudgerios.Api.Entities.Client", b =>
-                {
-                    b.HasOne("Pudgerios.Api.Entities.Request", null)
-                        .WithMany("Clients")
-                        .HasForeignKey("RequestId");
-
-                    b.HasOne("Pudgerios.Api.Entities.Room", null)
-                        .WithMany("Clients")
-                        .HasForeignKey("RoomId");
-                });
-
             modelBuilder.Entity("Pudgerios.Api.Entities.Request", b =>
                 {
+                    b.HasOne("Pudgerios.Api.Entities.Client", "Client")
+                        .WithMany()
+                        .HasForeignKey("ClientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Pudgerios.Api.Entities.Room", "Room")
                         .WithMany()
                         .HasForeignKey("RoomId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Room");
-                });
+                    b.Navigation("Client");
 
-            modelBuilder.Entity("Pudgerios.Api.Entities.Request", b =>
-                {
-                    b.Navigation("Clients");
+                    b.Navigation("Room");
                 });
 
             modelBuilder.Entity("Pudgerios.Api.Entities.Room", b =>
                 {
-                    b.Navigation("Clients");
+                    b.HasOne("Pudgerios.Api.Entities.Client", "Client")
+                        .WithMany()
+                        .HasForeignKey("ClientId");
+
+                    b.Navigation("Client");
                 });
 #pragma warning restore 612, 618
         }

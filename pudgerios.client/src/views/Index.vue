@@ -45,10 +45,10 @@
 				</div>
 			</div>
 		</div>
-		<div id = 'frame-3-cards'>
+		<div class = 'frame-overflow-content'>
 		<div class='container'>
 			<div class='row'>
-				<div class = 'col-md-4'>
+				<div class = 'col-lg-4'>
 					<Typecard 
 						image="luxe.png"
 						caption="Аппартаменты класса Luxe"
@@ -59,7 +59,7 @@
 						link="#"
 					/>
 				</div>
-				<div class = 'col-md-4'>
+				<div class = 'col-lg-4'>
 					<Typecard
 						image="gold.png"
 						caption="Аппартаменты класса Gold"
@@ -70,7 +70,7 @@
 						link="#"
 					/>
 				</div>
-				<div class = 'col-md-4'>
+				<div class = 'col-lg-4'>
 					<Typecard
 						image="gold.png"
 						caption="Аппартаменты класса Platina"
@@ -87,7 +87,81 @@
 		<img src='../static/img/index3.png'>
 	</div>
 	<div class='frame frame-4 text-light'>
-
+		<div id = 'services'>
+		<div class = 'frame-overflow-content'>
+			<div class = 'container-fluid'>
+			<div class = 'row'>
+				<div class = 'col-lg-3'>
+					<div class = 'service' id = 'service1'>
+						<a href = '#'>
+							<span>Рестораны и бары</span>
+						</a>
+					</div>
+				</div>
+				<div class = 'col-lg-3'>
+					<div class = 'service' id = 'service2'>
+						<a href = '#'>
+							<span>SPA Центр и услуги</span>
+						</a>
+					</div>
+				</div>
+				<div class = 'col-lg-3'>
+					<div class = 'service' id = 'service3'>
+						<a href = '#'>
+							<span>Развлечения и отдых</span>
+						</a>
+					</div>
+				</div>
+				<div class = 'col-lg-3'>
+					<div class = 'service' id = 'service4'>
+						<a href = '#'>
+							<span>Услуги и предложения</span>
+						</a>
+					</div>
+				</div>
+			</div>
+			</div>
+		</div>
+		</div>
+		<div id = 'hotel-info'>
+			<div class = 'container-fluid'>
+			<div class = 'row'>
+				<div class = 'col-4'>
+					<div class = 'info'>
+						<span>Приватный пляж</span>
+					</div>
+				</div>
+				<div class = 'col-4'>
+					aboba
+				</div>
+				<div class = 'col-4'>
+					aboba
+				</div>
+			</div>
+			<div class = 'row'>
+				<div class = 'col-4'>
+					aboba
+				</div>
+				<div class = 'col-4'>
+					aboba
+				</div>
+				<div class = 'col-4'>
+					aboba
+				</div>
+			</div>
+			<div class = 'row'>
+				<div class = 'col-4'>
+					aboba
+				</div>
+				<div class = 'col-4'>
+					aboba
+				</div>
+				<div class = 'col-4'>
+					aboba
+				</div>
+			</div>
+			</div>
+		</div>
 		<img src='../static/img/index4.png'>
 	</div>
 	<div class='frame frame-5 text-light'>
@@ -143,15 +217,6 @@
 		width: 100%;
 		height: 100%;
 		z-index: -1;
-	}
-
-	#frame-3-cards {
-		position: relative;
-		top: 12%;
-		left: 0;
-		width: 100%;
-		height: 70%;
-		overflow: auto;
 	}
 
 	.frame-4 img {
@@ -232,6 +297,96 @@
 		width: 45%;
 	}
 
+	.frame-overflow-content {
+		position: relative;
+		top: 12%;
+		left: 0;
+		width: 100%;
+		height: 70%;
+		overflow: auto;
+	}
+
+	#services {
+		position: relative;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 85%;
+	}
+
+	#services .container-fluid {
+		height: 100%;
+	}
+		
+	#services .container-fluid .row {
+		height: 100%;
+	}
+
+	.service {
+		position: relative;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	#service1 {
+		background-image: url('../static/img/service1.png');
+	}
+
+	#service2 {
+		background-image: url('../static/img/service2.png');
+	}
+
+	#service3 {
+		background-image: url('../static/img/service3.png');
+	}
+
+	#service4 {
+		background-image: url('../static/img/service4.png');
+	}
+
+	.service a {
+		display: block;
+		position: relative;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		text-decoration: none;
+	}
+	
+	.service a span {
+		display: block;
+		position: relative;
+		top: 45%;
+		width: 100%;
+		font-size: 4vh;
+		color: white;
+		text-align: center;
+		text-shadow: 1px 1px 2px black;	
+	}
+
+	.service img {
+		display: block;
+		filter: none;
+		z-index: 1;
+		position: relative;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+	}
+
+	#hotel-info {
+		position: relative;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 38%;
+		border: 1px solid red;
+	}
+
 	@media (max-width: 991.98px) {
 		.index-form {
 			display: none;
@@ -240,6 +395,14 @@
 		.description-1,
 		.description-2 {
 			font-size: 2vh;
+		}
+		
+		#services {
+			display: none;
+		}
+
+		#hotel-info {
+			height: 100%;
 		}
 	}
 

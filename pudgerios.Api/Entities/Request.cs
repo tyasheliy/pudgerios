@@ -6,7 +6,9 @@ namespace Pudgerios.Api.Entities
 		{
 				public Guid Id {get; set;}
 				[Required]
-				public List<Client> Clients {get; set;}
+				public Client Client {get; set;}
+				[Required]
+				public int Suits {get; set;}
 				[Required]
 				public Room Room {get; set;}
 				[Required]

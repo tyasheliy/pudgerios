@@ -1,5 +1,3 @@
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Pudgerios.Api.Entities
@@ -11,6 +9,6 @@ namespace Pudgerios.Api.Entities
 			public string Type {get; set;}
 			[Required]
 			public int Seats {get; set;}
-			public List<Client>? Clients {get; set;}
+			public Client? Client {get; set;}
 		}
 }

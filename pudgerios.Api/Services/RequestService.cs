@@ -41,7 +41,7 @@ namespace Pudgerios.Api.Services
 
 				public void Dispose()
 				{
-						GC.ReRegisterForFinalize(this);
+					GC.ReRegisterForFinalize(this);
 				}
 		}
 }

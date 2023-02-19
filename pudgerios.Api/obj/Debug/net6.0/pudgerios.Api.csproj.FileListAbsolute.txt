@@ -132,3 +132,7 @@
 /Users/tyasheliy/Desktop/Pudgerios/pudgerios.Api/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Design.dll
 /Users/tyasheliy/Desktop/Pudgerios/pudgerios.Api/bin/Debug/net6.0/Mono.TextTemplating.dll
 /Users/tyasheliy/Desktop/Pudgerios/pudgerios.Api/bin/Debug/net6.0/System.CodeDom.dll
+/home/tyasheliy/Desktop/pudgerios/pudgerios.Api/bin/Debug/net6.0/Humanizer.dll
+/home/tyasheliy/Desktop/pudgerios/pudgerios.Api/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Design.dll
+/home/tyasheliy/Desktop/pudgerios/pudgerios.Api/bin/Debug/net6.0/Mono.TextTemplating.dll
+/home/tyasheliy/Desktop/pudgerios/pudgerios.Api/bin/Debug/net6.0/System.CodeDom.dll

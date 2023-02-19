@@ -63,13 +63,13 @@ namespace Pudgerios.Api.Controllers
 				}
 
 				[HttpPost("clients/clear/{id}")]
-				public async Task<IActionResult> ClearClients(string id)
+				public async Task<IActionResult> ClearClient(string id)
 				{
 					if (int.TryParse(id, out var intid))
 					{
 						try
 						{
-							await _rooms.ClearClients(intid);
+							await _rooms.ClearClient(intid);
 						}
 						catch
 						{

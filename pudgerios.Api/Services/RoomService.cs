@@ -27,21 +27,21 @@ namespace Pudgerios.Api.Services
 		{
 			var room = await _db.Rooms.FindAsync(id);
 			if (room == null) throw new NullReferenceException();
-			room.Clients.Add(client);
+			room.Client = client;
 			await _db.SaveChangesAsync();
 		}
 
-		public async Task ClearClients(int id)
+		public async Task ClearClient(int id)
 		{
 			var room = await _db.Rooms.FindAsync(id);
 			if (room == null) throw new NullReferenceException();
-			room.Clients.Clear();
+			room.Client = null;
 			await _db.SaveChangesAsync();
 		}
 
 		public void Dispose()
 		{
-				GC.ReRegisterForFinalize(this);
+			GC.ReRegisterForFinalize(this);
 		}
 	}
 }

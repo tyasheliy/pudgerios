@@ -21,7 +21,7 @@
 			</span>
 		</div>
 		<div class='type-card-footer'>
-			<a :href='link' class='btn btn-light shadow' role='button'>{{validate_button_text()}}</a>
+			<a :href='link' class='btn btn-light shadow-lg w-100' role='button'>{{validate_button_text()}}</a>
 		</div>
 	</div>
 </template>
