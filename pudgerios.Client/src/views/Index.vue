@@ -1,6 +1,6 @@
 <template>
 	<div class='frame frame-1 text-center text-light'>
-		<Navbar transparent />
+		<Navbar/>
 		<span class='display-1 caption main-caption border border-light'>PUDGERIOS Hotel</span><br>
 		<span class='display-2 caption'>Восторг без границ<br>Комфорт без компромиссов</span>
 
@@ -124,70 +124,109 @@
 		</div>
 		</div>
 		<div id = 'hotel-info'>
-			<div class = 'container-fluid'>
-			<div class = 'row'>
+			<div class = 'row gx-0'>
 				<div class = 'col-4'>
 					<div class = 'info'>
 						<span>Приватный пляж</span>
 					</div>
 				</div>
 				<div class = 'col-4'>
-					aboba
+					<div class = 'info'>
+						<span>Просторные дизайнерские номера площадью до 250м2</span>
+					</div>
 				</div>
 				<div class = 'col-4'>
-					aboba
-				</div>
-			</div>
-			<div class = 'row'>
-				<div class = 'col-4'>
-					aboba
+					<div class = 'info'>
+						<span>Парковочная зона для гостей и клиентов отеля</span>
+					</div>
 				</div>
 				<div class = 'col-4'>
-					aboba
+					<div class = 'info'>
+						<span>Уникальные аппартаменты с собственным бассейном</span>
+					</div>
 				</div>
 				<div class = 'col-4'>
-					aboba
-				</div>
-			</div>
-			<div class = 'row'>
-				<div class = 'col-4'>
-					aboba
+					<div class = 'info'>
+						<span>Несколько ресторанов и винный бутик</span>
+					</div>
 				</div>
 				<div class = 'col-4'>
-					aboba
+					<div class = 'info'>
+						<span>Бассейн с превосходным видом на море</span>
+					</div>
 				</div>
 				<div class = 'col-4'>
-					aboba
+					<div class = 'info'>
+						<span>Ресторанное обслуживание 24/7</span>
+					</div>
 				</div>
-			</div>
+				<div class = 'col-4'>
+					<div class = 'info'>
+						<span>Больше 100 видов вина со всех уголков мира</span>
+					</div>
+				</div>
+				<div class = 'col-4'>
+					<div class = 'info'>
+						<span>Территория молодости, красоты</span>
+					</div>
+				</div>
 			</div>
 		</div>
 		<img src='../static/img/index4.png'>
 	</div>
 	<div class='frame frame-5 text-light'>
-
+		<div id = 'frame-5-margin'>
+			<span class = 'caption display-4'>События:</span>
+			<div class = 'frame-overflow-content'>
+				<div class = 'container border border-light'>
+					<div class = 'row'>
+						<div class = 'col-lg-4'>
+							<div class = 'event'>
+								<img/>
+								<div class = 'event-body'>
+									
+								</div>
+								<div class = 'event-footer'>
+									<a href = '#' class = 'btn btn-light' role = 'button'>Подробнее</a>
+								</div>
+							</div>
+						</div>
+						<div class = 'col-lg-4'>
+							<div class = 'event'>
+								aboba	
+							</div>
+						</div>
+						<div class = 'col-lg-4'>
+							<div class = 'event'>
+								aboba	
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
 		<img src='../static/img/index5.png'>
 	</div>
+	<Footer/>
 </template>
 
 <script>
-	import Navbar from '../components/Navbar.vue'
 	import Typecard from '../components/Typecard.vue'
+	import Navbar from '../components/Navbar.vue'
+	import Footer from '../components/Footer.vue'
 
 	export default {
 		components: {
+			Typecard,
 			Navbar,
-			Typecard
+			Footer
 		}
 	}
+
 </script>
 
-<style>
-	.frame {
-		width: 100%;
-		height: 100vh;
-	}
-
+<style scoped>
 	.frame img {
 		filter: brightness(40%);
 	}
@@ -328,6 +367,7 @@
 		left: 0;
 		width: 100%;
 		height: 100%;
+		background-size: cover;
 	}
 
 	#service1 {
@@ -347,45 +387,81 @@
 	}
 
 	.service a {
-		display: block;
+		display: flex;
 		position: relative;
 		top: 0;
 		left: 0;
 		width: 100%;
 		height: 100%;
 		text-decoration: none;
+		color: white;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		text-shadow: 1px 1px 1px black;
+		font-size: 4vh;
+		transition: 0.2s;
+	}
+
+	.service a:hover {
+		font-size: 4.3vh;
+		background: rgba(0, 0, 0, .3);
 	}
 	
-	.service a span {
-		display: block;
-		position: relative;
-		top: 45%;
-		width: 100%;
-		font-size: 4vh;
-		color: white;
-		text-align: center;
-		text-shadow: 1px 1px 2px black;	
-	}
-
-	.service img {
-		display: block;
-		filter: none;
-		z-index: 1;
-		position: relative;
-		top: 0;
-		left: 0;
-		height: 100%;
-		width: 100%;
-	}
-
 	#hotel-info {
 		position: relative;
 		top: 0;
 		left: 0;
 		width: 100%;
 		height: 38%;
-		border: 1px solid red;
+		background: rgba(255, 255, 255, .8);
 	}
+	
+	#hotel-info .row {
+		position: relative;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	.info {
+		position: relative;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border: 1px solid black;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+	}
+
+	.info span {
+		color: black;
+	}
+
+	#frame-5-margin {
+		position: relative;
+		top: 25%;
+		left: 0;
+		width: 100%;
+		height: 75%;
+	}
+
+	#frame-5-margin .frame-overflow-content {
+		height: 50%;
+	}
+	
+	.event {
+		position: relative;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: white;
+	}		
 
 	@media (max-width: 991.98px) {
 		.index-form {

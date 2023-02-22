@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/tyasheliy/Desktop/Pudgerios/pudgerios.api/pudgerios.Api.csproj": {}
+    "/Users/tyasheliy/Desktop/Pudgerios/pudgerios.Api/pudgerios.Api.csproj": {}
   },
   "projects": {
-    "/Users/tyasheliy/Desktop/Pudgerios/pudgerios.api/pudgerios.Api.csproj": {
+    "/Users/tyasheliy/Desktop/Pudgerios/pudgerios.Api/pudgerios.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/tyasheliy/Desktop/Pudgerios/pudgerios.api/pudgerios.Api.csproj",
+        "projectUniqueName": "/Users/tyasheliy/Desktop/Pudgerios/pudgerios.Api/pudgerios.Api.csproj",
         "projectName": "pudgerios.Api",
-        "projectPath": "/Users/tyasheliy/Desktop/Pudgerios/pudgerios.api/pudgerios.Api.csproj",
+        "projectPath": "/Users/tyasheliy/Desktop/Pudgerios/pudgerios.Api/pudgerios.Api.csproj",
         "packagesPath": "/Users/tyasheliy/.nuget/packages/",
-        "outputPath": "/Users/tyasheliy/Desktop/Pudgerios/pudgerios.api/obj/",
+        "outputPath": "/Users/tyasheliy/Desktop/Pudgerios/pudgerios.Api/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/tyasheliy/.nuget/NuGet/NuGet.Config"

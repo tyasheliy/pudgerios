@@ -1,15 +1,9 @@
 <template>
-	<Index />
+	<router-view/>
 </template>
 
 <script>
-	import Index from './views/Index.vue'
 
-	export default{
-		components: {
-			Index
-		}
-	}
 </script>
 
 <style>
@@ -20,5 +14,10 @@
 		font-family: 'Alice';
 		font-weight: 400;
 		font-style: normal;
+	}
+
+	.frame {
+		width: 100%;
+		height: 100vh;
 	}
 </style>

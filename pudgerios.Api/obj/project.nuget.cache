@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6hZN4xWY4iIoUQ3vMF/MZTXAaY8VKgp7SGYLMGtaSCigQesipjXA/B7tbDZBBxZlCwJxWf5SwY6mL8z+LOuSWg==",
+  "dgSpecHash": "F6uB96KebWlhxP0imEX5roI1Cv5iO77FnSA7fU4hzdYKD54ft4h1XRWhd9xLVV6gf807lifiSI9SMnALsmHwTQ==",
   "success": true,
-  "projectFilePath": "/Users/tyasheliy/Desktop/Pudgerios/pudgerios.api/pudgerios.Api.csproj",
+  "projectFilePath": "/Users/tyasheliy/Desktop/Pudgerios/pudgerios.Api/pudgerios.Api.csproj",
   "expectedPackageFiles": [
     "/Users/tyasheliy/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/tyasheliy/.nuget/packages/microsoft.data.sqlite.core/7.0.2/microsoft.data.sqlite.core.7.0.2.nupkg.sha512",
